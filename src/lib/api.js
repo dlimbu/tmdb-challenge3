@@ -1,4 +1,4 @@
-import {Movie} from "./models";
+import {Movie, Series} from "./models";
 
 const apiKey = `66683917a94e703e14ca150023f4ea7c`;
 let stage;
@@ -20,6 +20,20 @@ export const getMovies = async()=> {
     if(results.length){
         return results.map((data)=>{
             return new Movie(data);
+        });
+    }
+
+    return [];
+};
+
+export const getSeries = async()=> {
+    // https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}
+    const movies = await get(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`);
+    const {results = []} = movies;
+
+    if(results.length){
+        return results.map((data)=>{
+            return new Series(data);
         });
     }
 

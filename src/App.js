@@ -55,7 +55,7 @@ export default class App extends Lightning.Component {
                 }
 
                 $exit() {
-                    this.tag("Loading").visible = false;
+                    // this.tag("Loading").visible = false;
                 }
             },
             class Widgets extends this {
@@ -78,6 +78,13 @@ export default class App extends Lightning.Component {
         ];
     }
 
+    _disable() {
+        console.log('Disabled')
+    }
+
+    _enable() {
+        console.log('Enabled')
+    }
     // tell page router where to store the pages
     get pages() {
         return this.tag("Pages");

@@ -14,7 +14,6 @@ export default () =>{
     Router.root('splash', Splash);
     // Add route for movies
     Router.route('movies', Main);
-
     /**
      * @todo:
      * uncomment this line
@@ -27,7 +26,8 @@ export default () =>{
      *
      * You also need to add the proper data-provider
      */
-
+    
+    Router.route('series', Main);
 
     Router.start();
 }

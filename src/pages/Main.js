@@ -16,7 +16,7 @@ export default class Main extends Lightning.Component{
     }
 
     set data(v){
-        this.tag("List").movies = v;
+        this.tag("List").data = v;
     }
 
     /**
@@ -30,7 +30,7 @@ export default class Main extends Lightning.Component{
             Lists: {
                 smooth: {y: [560, {duration: .2, timingFunction: 'cubic-bezier(0.20, 1.00, 0.80, 1.00)'}]}
             }
-        });
+        }); 
     }
 
     _unfocus() {

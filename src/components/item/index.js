@@ -131,6 +131,7 @@ export default class Item extends Lightning.Component {
             }
         });
 
+        this.signal('onItemFocus', this._item);
         this._focusAnimation.start();
     }
 
@@ -146,7 +147,7 @@ export default class Item extends Lightning.Component {
                 }
             }
         });
-
+        this.signal('onItemOffFocus', this._item);
         this._focusAnimation.stop();
     }
 

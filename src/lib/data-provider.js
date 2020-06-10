@@ -1,5 +1,5 @@
 import {Router} from "wpe-lightning-sdk";
-import {getMovies} from './api';
+import {getMovies, getSeries} from './api';
 
 /**
  *  bind a data request to a specific route, before a page load
@@ -24,6 +24,11 @@ export default () => {
         page.data = movies;
     }, 10 * 60 /* expires */);
 
+
+    Router.before("series", async ({page})=>{
+        const series = await getSeries();
+        page.data = series;
+    }, 10 * 60 /* expires */);
 
     /**
      * @todo:
